@@ -7,7 +7,7 @@ export const parseMarkdown = (markdown: string): string => {
     let codeBlocks: string[] = [];
     markdown = markdown.replace(/```([\s\S]*?)```/g, (_, match) => {
         codeBlocks.push(match);
-        return '\0'; // Unique placeholder
+        return '\0';
     });
 
     const elements: ParsedElement[] = [
