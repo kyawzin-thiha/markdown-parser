@@ -6,7 +6,7 @@ import Editor from '@monaco-editor/react';
 import styles from './page.module.scss';
 
 export default function Home() {
-	const [parsedValue, setParsedValue] = useState<string>('// some comments');
+	const [parsedValue, setParsedValue] = useState<string>('// writ your markdown here');
 	const onChange = useCallback((value: string | undefined) => {
 		if (value) setParsedValue(parseMarkdown(value));
 	}, []);
@@ -24,7 +24,7 @@ export default function Home() {
 						width="100%"
 						height="100%"
 						defaultLanguage="markdown"
-						defaultValue="// some comment"
+						defaultValue="// writ your markdown here"
 						className={styles.editor}
 						onChange={onChange}
 						options={{
