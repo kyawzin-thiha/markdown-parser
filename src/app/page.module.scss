@@ -1,47 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 .main {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  background-color: #f5f5f5; // Adding a light background
-
+  justify-content: center;
+  flex-direction: column;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .editorContainer, .parserContainer {
-    width: 45%;
-    height: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Adding shadow for depth
-    transition: transform 0.3s ease-in-out;
+  .header {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
 
-    @media screen and (max-width: 768px) {
-      width: 100%;
-      height: 50%;
-      border-radius: 0;
+    .title {
+      font-size: 2em; // Adjust size as needed
+      margin-bottom: 0.5em;
+      color: #333;
     }
 
-    .editor, .parser {
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      overflow: hidden;
+    .subtitle {
+      font-size: 1.2em; // Adjust size as needed
+      color: #666;
+    }
+  }
 
+  .inputContainer {
+    width: 100%;
+    max-width: 1600px;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .editorContainer, .parserContainer {
+      background-color: #fff;
+      width: 35%;
+      height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
       @media screen and (max-width: 768px) {
-        border-radius: 0;
+        width: 100%;
+        height: 50%;
       }
+    }
+
+    .editor {
+      padding: 10px 5px;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     .parser {
       width: 100%;
       height: 100%;
-      padding: 10px 15px;
-      -ms-overflow-style: none; // IE and Edge
-      scrollbar-width: none; // Hiding scrollbar for cleaner look
+      overflow: scroll;
+      line-height: 1.5;
+      font-size: 16px;
       background-color: #fff;
-      overflow-y: scroll;
+      padding: 10px 20px;
+      overflow-x: hidden;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
 
       img {
         width: 100%;
@@ -50,29 +81,24 @@
       }
 
       code {
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        border-left: 3px solid #f36d33;
-        color: #666;
-        page-break-inside: avoid;
-        font-family: monospace;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 1em;
-        max-width: 100%;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        padding: 5px 10px;
         overflow: auto;
-        padding: 1em 1.5em;
-        display: block;
-        word-wrap: break-word;
       }
 
+      pre {
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+      }
 
       ul, ol {
         margin-left: 20px;
         padding-left: 0;
 
         li {
-          list-style-type: disc;
           margin-bottom: 0.5em;
 
           &:last-child {
@@ -80,19 +106,7 @@
           }
         }
       }
-
-      ul {
-        li {
-          list-style-type: disc;
-        }
-      }
-
-      ol {
-        li {
-          list-style-type: decimal;
-        }
-      }
-
     }
+
   }
 }
